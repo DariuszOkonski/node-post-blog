@@ -16,6 +16,15 @@ router.get('/posts', (req, res) => {
             });
         }
     });
+});
+
+router.get('/posts/new', (req, res) => {
+    res.render('new');
+});
+
+router.post('/posts', (req, res) => {
+
+    res.send('This will be post page');
 })
 
 module.exports = router;
