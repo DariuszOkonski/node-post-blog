@@ -3,7 +3,8 @@ const app = express();
 
 const indexRoutes = require('./routes/index');
 
-
+// middlewares ================================
+app.set('view engine', 'ejs');
 
 app.use(indexRoutes);
 
