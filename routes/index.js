@@ -3,7 +3,7 @@ const router = express.Router({mergeParams: true});
 const Post = require('../model/post');
 
 router.get('/', (req, res) => {
-    res.redirect('/posts');
+    res.render('landing');
 });
 
 router.get('/posts', (req, res) => {
