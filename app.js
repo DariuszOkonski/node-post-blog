@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const expressSanitizer = require('express-sanitizer');
 
 const indexRoutes = require('./routes/index');
 
@@ -19,7 +21,12 @@ mongoose.connect('mongodb://localhost/post_app', {
 
 // middlewares ================================
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 app.set('view engine', 'ejs');
+app.use(expressSanitizer());
 
 app.use(indexRoutes);
 
