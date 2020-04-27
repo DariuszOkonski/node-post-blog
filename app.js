@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('I am working...');
-})
+const indexRoutes = require('./routes/index');
 
+
+
+app.use(indexRoutes);
 
 
 // listener ==============================
