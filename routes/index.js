@@ -23,8 +23,18 @@ router.get('/posts/new', (req, res) => {
 });
 
 router.post('/posts', (req, res) => {
+    const title = req.sanitize(req.body.post.title);
+    const image = req.sanitize(req.body.post.image);
+    const content = req.sanitize(req.body.post.content);
 
-    res.send('This will be post page');
+    Post.create({title, image, content}, (err) => {
+        if(err) {
+            console.log('ERROR: post/posts: ', err);
+            res.redirect('/posts');
+        } else {
+            res.redirect('/posts');
+        }
+    });
 })
 
 module.exports = router;
