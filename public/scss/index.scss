@@ -2,6 +2,20 @@ body {
     background-color: white;
 }
 
-// #form {
-//     display: inline;
-// }
+#mt-lg {
+    margin-top: 4rem;
+}
+
+#landing-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: yellow;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        background-color: red;
+    }
+}
