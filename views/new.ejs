@@ -6,18 +6,18 @@
     <form action="/posts" method="POST">
         <div class="form-group">
           <label for="title">Title</label>
-          <input type="text" class="form-control" id="title" placeholder="Enter post title..." required>
+          <input type="text" class="form-control" id="title" name="post[title]" placeholder="Enter post title..." required>
         </div>
         
         <div class="form-group">
           <label for="image">Image</label>
-          <input type="text" class="form-control" id="image" placeholder="Enter image path..." required>
+          <input type="text" class="form-control" id="image" name="post[image]" placeholder="Enter image path..." required>
         </div>
        
        
         <div class="form-group">
           <label for="content">Post Content</label>
-          <textarea class="form-control" id="content" rows="5" placeholder="Enter your post content..." required></textarea>
+          <textarea class="form-control" id="content" rows="5" name="post[content]" placeholder="Enter your post content..." required></textarea>
         </div>
 
         <a class="btn btn-success" href="/posts">Back</a>
@@ -26,3 +26,4 @@
 </div>
 
 <%- include('partials/footer.ejs') %>
+
