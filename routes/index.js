@@ -26,7 +26,7 @@ router.get('/posts/new', (req, res) => {
 router.post('/posts', (req, res) => {
     const title = req.sanitize(req.body.post.title);
     const image = req.sanitize(req.body.post.image);
-    const content = req.sanitize(req.body.post.content);
+    const content = req.sanitize(req.body.post.content.trim());
 
     Post.create({title, image, content}, (err) => {
         if(err) {
@@ -67,7 +67,7 @@ router.get('/posts/:id/edit', (req, res) => {
 router.put('/posts/:id', (req, res) => {
     const title = req.sanitize(req.body.post.title);
     const image = req.sanitize(req.body.post.image);
-    const content = req.sanitize(req.body.post.content);
+    const content = req.sanitize(req.body.post.content.trim());
 
     Post.findByIdAndUpdate(req.params.id, {title, image, content}, (err) => {
         if(err) {
@@ -78,5 +78,16 @@ router.put('/posts/:id', (req, res) => {
         }
     })
 });
+
+router.delete('/posts/:id', (req, res) => {
+    Post.findByIdAndRemove(req.params.id, (err) => {
+        if(err) {
+            console.log('ERROR: delete/posts/id...');
+            res.redirect('/');
+        } else {
+            res.redirect('/posts');
+        }
+    })
+})
 
 module.exports = router;
