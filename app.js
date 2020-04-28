@@ -9,7 +9,8 @@ const indexRoutes = require('./routes/index');
 
 // connection to mongoDB =====================
 // mongoose.connect('mongodb://localhost/post_app', {
-mongoose.connect('mongodb+srv://dazza:darek80@postblog005cluster-cgah9.mongodb.net/test?retryWrites=true&w=majority', {
+// mongoose.connect('mongodb+srv://dazza:darek80@postblog005cluster-cgah9.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://dazzdev:darek200180@cluster0-j3f41.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
