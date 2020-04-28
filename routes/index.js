@@ -6,6 +6,10 @@ router.get('/', (req, res) => {
     res.render('landing');
 });
 
+router.get('/posts/about', (req, res) => {
+    res.render('about');
+})
+
 router.get('/posts', (req, res) => {
     Post.find({}, (err, foundPosts) => {
         if(err) {
