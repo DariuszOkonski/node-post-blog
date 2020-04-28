@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs') %>
+
+<div id="mt-lg" class="container">
+    <h1 class="display-4 my-3">Show Page</h1>
+
+    <div class="card" style="width: 100%">
+        <img src="<%= post.image %>" class="card-img-top" alt="<%= post.title %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <p class="card-text"><small class="text-muted">
+            <%= post.created.toDateString() %>
+        </small></p>
+          <p class="card-text"><%= post.content %></p>
+          <a href="/posts" class="btn btn-success">Back</a>
+        </div>
+      </div>
+</div>
+
+<%- include('partials/footer.ejs') %>
