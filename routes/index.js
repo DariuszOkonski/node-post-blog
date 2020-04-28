@@ -10,6 +10,7 @@ router.get('/posts', (req, res) => {
     Post.find({}, (err, foundPosts) => {
         if(err) {
             console.log('ERROR at get/post...');
+            res.redirect('/');
         } else {
             res.render('index', {
                 posts: foundPosts
@@ -30,9 +31,22 @@ router.post('/posts', (req, res) => {
     Post.create({title, image, content}, (err) => {
         if(err) {
             console.log('ERROR: post/posts: ', err);
-            res.redirect('/posts');
+            res.redirect('/');
         } else {
             res.redirect('/posts');
+        }
+    });
+});
+
+router.get('/posts/:id', (req, res) => {
+    Post.findById(req.params.id, (err, foundPost) => {
+        if(err) {
+            console.log('ERROR at get/posts/id...');
+            res.redirect('/');
+        } else {
+            res.render('show', {
+                post: foundPost
+            });
         }
     });
 })
