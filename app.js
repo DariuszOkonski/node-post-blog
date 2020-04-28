@@ -8,7 +8,8 @@ const methodOverride = require('method-override');
 const indexRoutes = require('./routes/index');
 
 // connection to mongoDB =====================
-mongoose.connect('mongodb://localhost/post_app', {
+// mongoose.connect('mongodb://localhost/post_app', {
+mongoose.connect('mongodb+srv://dazza:darek80@postblog005cluster-cgah9.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
