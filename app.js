@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const expressSanitizer = require('express-sanitizer');
+const methodOverride = require('method-override');
 
 const indexRoutes = require('./routes/index');
 
@@ -27,6 +28,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 app.use(expressSanitizer());
+app.use(methodOverride('_method'));
 
 app.use(indexRoutes);
 
