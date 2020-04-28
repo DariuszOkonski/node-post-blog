@@ -10,7 +10,8 @@ const indexRoutes = require('./routes/index');
 // connection to mongoDB =====================
 mongoose.connect('mongodb://localhost/post_app', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 }, (err) => {
     if(err) {
         console.log('ERROR: no mongoDB connection...');
