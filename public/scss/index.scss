@@ -9,13 +9,18 @@ body {
 #landing-page {
     width: 100%;
     min-height: 100vh;
-    background-color: yellow;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../img/elcapitan.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     .container {
-        background-color: red;
+        background-color: white;
+        padding: 2rem;
+        border-radius: 5px;
     }
 }
