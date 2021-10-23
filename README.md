@@ -6,13 +6,10 @@ specific post. This Website is deployed on Heroku.
 ## Author
 - Dariusz Okonski
 
-## Tools & Technology used
-- Visual Studio Code
-- Node.js
-- Express
-- MongoDB
+## Technologies 
 - JavaScript
+- Node
+- Express
+- MongoDb
 - Mongoose
-- .ejs
-- SASS
-- body-parser
+- Bootstrap
