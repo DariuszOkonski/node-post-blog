@@ -13,3 +13,5 @@ specific post. This Website is deployed on Heroku.
 - MongoDb
 - Mongoose
 - Bootstrap
+
+Application is hosted on heroku, so it can take few seconds to start: https://node-005-post-blog.herokuapp.com/
